@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="hql.common.beans.Log" table="t_log" catalog="sevencolor">
+		<id name="logId" type="java.lang.Integer">
+			<column name="log_id" />
+			<generator class="identity" />
+		</id>
+		<many-to-one name="operaUser" class="hql.common.beans.User"
+			insert="false" update="false" index="t_log_opera_id_idx" foreign-key="null">
+			<column name="opera_id" />
+		</many-to-one>
+		<many-to-one name="beOperaUser" class="hql.common.beans.User"
+			insert="false" update="false" index="t_log_beopera_id_idx" foreign-key="null">
+			<column name="beopera_id" />
+		</many-to-one>
+		<property name="logOperaTime" type="timestamp">
+			<column name="log_opera_time" length="19" not-null="true" />
+		</property>
+		<property name="operaIp" type="string">
+			<column name="opera_ip" length="20" />
+		</property>
+		<property name="isLeapfrogOpera" type="java.lang.Short">
+			<column name="is_leapfrog_opera" />
+		</property>
+		<set name="logDetails" table="t_log_detail" inverse="true"
+			cascade="all,delete-orphan" sort="natural">
+			<key>
+				<column name="log_id" />
+			</key>
+			<one-to-many class="hql.common.beans.LogDetail" />
+		</set>
+	</class>
+</hibernate-mapping>

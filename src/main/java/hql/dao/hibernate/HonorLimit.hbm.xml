@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="hql.common.beans.HonorLimit" table="t_honor_limit"
+		catalog="sevencolor">
+		<id name="honorLimitId" type="java.lang.Integer">
+			<column name="honor_limit_id" />
+			<generator class="identity" />
+		</id>
+		<property name="honorLimitMax" type="java.lang.Integer">
+			<column name="honor_limit_max" />
+		</property>
+		<property name="residueHonorLimit" type="java.lang.Integer">
+			<column name="residue_honor_limit" />
+		</property>
+		<property name="usedHonorLimit" type="java.lang.Integer">
+			<column name="used_honor_limit" />
+		</property>
+		<many-to-one name="user" class="hql.common.beans.User"
+			insert="false" update="false" foreign-key="null" index="honor_limit_user_id_idx">
+			<column name="user_id" />
+		</many-to-one>
+		<many-to-one name="parent" class="hql.common.beans.User"
+			insert="false" update="false" foreign-key="null" index="honor_limit_parent_id_idx">
+			<column name="parent_id" />
+		</many-to-one>
+
+
+	</class>
+</hibernate-mapping>

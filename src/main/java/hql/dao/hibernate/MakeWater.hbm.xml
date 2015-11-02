@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="hql.common.beans.MakeWater" table="t_make_water"
+		catalog="sevencolor">
+		<id name="makeWaterId" type="java.lang.Integer">
+			<column name="make_water_id" />
+			<generator class="identity" />
+		</id>
+		<many-to-one name="user" class="hql.common.beans.User"
+			insert="false" update="false" index="make_water_user_id_idx" foreign-key="null">
+			<column name="user_id" />
+		</many-to-one>
+		<property name="parent" type="hql.common.beans.User" insert="false" update="false">
+			<column name="user_id" />
+		</property>
+		<property name="makeWaterValue" type="big_decimal">
+			<column name="make_water_value" precision="6" scale="3" />
+		</property>
+		<property name="palyGroupId" type="java.lang.Integer">
+			<column name="paly_group_id" />
+		</property>
+	</class>
+</hibernate-mapping>

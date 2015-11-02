@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="hql.common.beans.User" table="t_user" catalog="sevencolor">
+        <id name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid" />
+        </property>
+        <property name="codeName" type="string">
+            <column name="code_name" length="128">
+                <comment>&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="userAccount" type="string">
+            <column name="user_account" length="20">
+                <comment>&#213;&#202;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="accountType" type="java.lang.Short">
+            <column name="account_type" />
+        </property>
+        <property name="userPassword" type="string">
+            <column name="user_password" length="60">
+                <comment>&#195;&#220;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="userStatus" type="java.lang.Short">
+            <column name="user_status">
+                <comment>&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="userMobile" type="string">
+            <column name="user_mobile" length="32">
+                <comment>&#202;&#214;&#187;&#250;</comment>
+            </column>
+        </property>
+        <property name="isFirstLogin" type="java.lang.Short">
+            <column name="is_first_login" />
+        </property>
+        <property name="percentMax" type="big_decimal">
+            <column name="percent_max" precision="6" scale="3" />
+        </property>
+        <property name="parentUserId" type="java.lang.Integer">
+            <column name="parent_user_id" />
+        </property>
+        <property name="userLevel" type="string">
+            <column name="user_level" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="hql.common.beans.UserRole" table="t_user_role"
+		catalog="sevencolor">
+		<id name="userRoleId" type="java.lang.Integer">
+			<column name="user_role_id" />
+			<generator class="identity" />
+		</id>
+		<many-to-one name="user" class="hql.common.beans.User"
+			insert="false" update="false" index="user_role_user_id_idx" foreign-key="null">
+			<column name="user_id" />
+		</many-to-one>
+		<many-to-one name="role" class="hql.common.beans.Role"
+			insert="false" update="false" index="user_role_role_id_idx" foreign-key="null">
+			<column name="role_id" />
+		</many-to-one>
+		<property name="parentPercentMax" type="big_decimal">
+			<column name="parent_percent_max" precision="6" scale="3" />
+		</property>
+		<property name="percentMax" type="big_decimal">
+			<column name="percent_max" precision="6" scale="3" />
+		</property>
+		<property name="parentId" type="java.lang.Integer">
+			<column name="parent_id" />
+		</property>
+
+
+
+	</class>
+</hibernate-mapping>
