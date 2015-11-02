@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="hql.common.beans.TRole" table="t_role" catalog="sevencolor">
+        <id name="roleId" type="int">
+            <column name="role_id" />
+            <generator class="assigned" />
+        </id>
+        <property name="roleName" type="string">
+            <column name="role_name" length="128" not-null="true">
+                <comment>&#189;&#199;&#201;&#171;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="roleAlias" type="string">
+            <column name="role_alias" length="128">
+                <comment>&#189;&#199;&#201;&#171;&#177;&#240;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="roleNote" type="string">
+            <column name="role_note" length="256">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="allowDel" type="java.lang.Short">
+            <column name="allow_del">
+                <comment>&#212;&#202;&#208;&#237;&#201;&#190;&#179;&#253;</comment>
+            </column>
+        </property>
+        <property name="allowEdit" type="java.lang.Short">
+            <column name="allow_edit">
+                <comment>&#212;&#202;&#208;&#237;&#177;&#224;&#188;&#173;</comment>
+            </column>
+        </property>
+        <property name="roleEnabled" type="java.lang.Short">
+            <column name="role_enabled">
+                <comment>&#202;&#199;&#183;&#241;&#198;&#244;&#211;&#195;</comment>
+            </column>
+        </property>
+        <set name="TRoleReses" table="t_role_res" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="role_id" />
+            </key>
+            <one-to-many class="hql.common.beans.TRoleRes" />
+        </set>
+        <set name="TUserRoles" table="t_user_role" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="role_id" />
+            </key>
+            <one-to-many class="hql.common.beans.TUserRole" />
+        </set>
+    </class>
+</hibernate-mapping>

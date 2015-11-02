@@ -72,15 +72,18 @@ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 		</property>
 
 		<!-- 自动扫描注解方式配置的hibernate类文件 -->
-		<property name="packagesToScan">
+		<!-- <property name="packagesToScan">
 			<list>
 				<value>hql.sevencolor.po</value>
 			</list>
-		</property>
+		</property> -->
 
 		<!-- 自动扫描hbm方式配置的hibernate文件和.hbm文件 -->
-		<!-- <property name="mappingDirectoryLocations"> <list> <value>classpath:sy/hbm</value> 
-			</list> </property> -->
+		<property name="mappingLocations">
+			<list> 
+				<value>classpath*:/hql/dao/hibernate/*.hbm.xml</value> 
+			</list> 
+		</property>
 	</bean>
 
 	<!-- 配置事务管理器 -->

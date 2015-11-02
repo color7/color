@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="hql.common.beans.TPlayGroup" table="t_play_group" catalog="sevencolor">
+        <id name="playGroupId" type="java.lang.Integer">
+            <column name="play_group_id" />
+            <generator class="identity" />
+        </id>
+        <property name="playGroupName" type="string">
+            <column name="play_group_name" length="64" />
+        </property>
+        <property name="playGroupEnabled" type="java.lang.Short">
+            <column name="play_group_enabled" />
+        </property>
+        <set name="TPlays" table="t_play" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="play_group_id" />
+            </key>
+            <one-to-many class="hql.common.beans.TPlay" />
+        </set>
+    </class>
+</hibernate-mapping>

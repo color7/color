@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="hql.common.beans.TFourDefaultOdds" table="t_four_default_odds" catalog="sevencolor">
+        <id name="fourDefaultOddsId" type="java.lang.Integer">
+            <column name="four_default_odds_id" />
+            <generator class="identity" />
+        </id>
+        <property name="playId" type="java.lang.Integer">
+            <column name="play_id" />
+        </property>
+        <property name="playName" type="string">
+            <column name="play_name" length="20" />
+        </property>
+        <property name="defaultOdds" type="big_decimal">
+            <column name="default_odds" precision="6" scale="3" />
+        </property>
+        <set name="TFourNumbers" table="t_four_number" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="four_default_odds_id" />
+            </key>
+            <one-to-many class="hql.common.beans.TFourNumber" />
+        </set>
+    </class>
+</hibernate-mapping>

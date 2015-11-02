@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="hql.common.beans.TSevencolorLottery" table="t_sevencolor_lottery" catalog="sevencolor">
+        <id name="lotteryId" type="java.lang.Integer">
+            <column name="lottery_id" />
+            <generator class="identity" />
+        </id>
+        <property name="ballOne" type="string">
+            <column name="ball_one" length="1" />
+        </property>
+        <property name="ballTwo" type="string">
+            <column name="ball_two" length="1" />
+        </property>
+        <property name="ballThree" type="string">
+            <column name="ball_three" length="1" />
+        </property>
+        <property name="ballFour" type="string">
+            <column name="ball_four" length="1" />
+        </property>
+        <property name="ballFive" type="string">
+            <column name="ball_five" length="1" />
+        </property>
+        <property name="ballSix" type="string">
+            <column name="ball_six" length="1" />
+        </property>
+        <property name="ballSeven" type="string">
+            <column name="ball_seven" length="1" />
+        </property>
+        <property name="lotteryNumber" type="string">
+            <column name="lottery_number" length="10" />
+        </property>
+        <property name="lotteryTime" type="timestamp">
+            <column name="lottery_time" length="19" not-null="true" />
+        </property>
+        <property name="issueNumber" type="string">
+            <column name="issue_number" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

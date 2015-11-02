@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="hql.common.beans.TOrderDetail" table="t_order_detail" catalog="sevencolor">
+        <id name="orderDetailId" type="java.lang.Integer">
+            <column name="order_detail_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="TOrder" class="hql.common.beans.TOrder" fetch="select">
+            <column name="order_id" />
+        </many-to-one>
+        <property name="orderNumber" type="string">
+            <column name="order_number" length="10" />
+        </property>
+        <property name="orderOdds" type="big_decimal">
+            <column name="order_odds" precision="6" scale="3" />
+        </property>
+        <property name="orderMoney" type="big_decimal">
+            <column name="order_money" precision="6" />
+        </property>
+        <property name="winningMoney" type="big_decimal">
+            <column name="winning_money" precision="12" />
+        </property>
+        <property name="orderStatus" type="java.lang.Short">
+            <column name="order_status" />
+        </property>
+        <property name="cancelTime" type="timestamp">
+            <column name="cancel_time" length="19" not-null="true" />
+        </property>
+        <property name="backWater" type="big_decimal">
+            <column name="back_water" precision="10" scale="3" />
+        </property>
+        <property name="isWinning" type="java.lang.Short">
+            <column name="is_winning" />
+        </property>
+    </class>
+</hibernate-mapping>
