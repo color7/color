@@ -4,8 +4,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>登录页面</title>
-<link rel="stylesheet" href="Css/home.css" type="text/css" media="screen" charset="utf-8">
-<link rel="stylesheet" href="Css/sign.min.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="./css/home.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="./css/sign.min.css" type="text/css" media="screen" charset="utf-8">
 </head>
 
 <body style="background-color:#fff;">
