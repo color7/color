@@ -5,18 +5,25 @@
 <hibernate-mapping>
 	<class name="hql.common.beans.HonorLimit" table="t_honor_limit"
 		catalog="sevencolor">
+		<comment>信用额度表</comment>
 		<id name="honorLimitId" type="java.lang.Integer">
 			<column name="honor_limit_id" />
 			<generator class="identity" />
 		</id>
 		<property name="honorLimitMax" type="java.lang.Integer">
-			<column name="honor_limit_max" />
+			<column name="honor_limit_max">
+				<comment>总信用额度</comment>
+			</column>
 		</property>
 		<property name="residueHonorLimit" type="java.lang.Integer">
-			<column name="residue_honor_limit" />
+			<column name="residue_honor_limit">
+				<comment>可分配信用额度</comment>
+			</column>
 		</property>
 		<property name="usedHonorLimit" type="java.lang.Integer">
-			<column name="used_honor_limit" />
+			<column name="used_honor_limit">
+				<comment>已分配信用额度</comment>
+			</column>
 		</property>
 		<many-to-one name="user" class="hql.common.beans.User"
 			insert="false" update="false" foreign-key="null" index="honor_limit_user_id_idx">
@@ -24,7 +31,7 @@
 		</many-to-one>
 		<many-to-one name="parent" class="hql.common.beans.User"
 			insert="false" update="false" foreign-key="null" index="honor_limit_parent_id_idx">
-			<column name="parent_id" />
+			<column name="parent_user_id" />
 		</many-to-one>
 
 

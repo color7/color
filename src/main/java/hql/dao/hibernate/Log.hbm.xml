@@ -4,6 +4,7 @@
 <!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
 	<class name="hql.common.beans.Log" table="t_log" catalog="sevencolor">
+		<comment>日志表</comment>
 		<id name="logId" type="java.lang.Integer">
 			<column name="log_id" />
 			<generator class="identity" />
@@ -13,7 +14,8 @@
 			<column name="opera_id" />
 		</many-to-one>
 		<many-to-one name="beOperaUser" class="hql.common.beans.User"
-			insert="false" update="false" index="t_log_beopera_id_idx" foreign-key="null">
+			insert="false" update="false" index="t_log_beopera_id_idx"
+			foreign-key="null">
 			<column name="beopera_id" />
 		</many-to-one>
 		<property name="logOperaTime" type="timestamp">

@@ -5,6 +5,7 @@
 <hibernate-mapping>
 	<class name="hql.common.beans.PlayGroup" table="t_play_group"
 		catalog="sevencolor">
+		<comment>玩法组表</comment>
 		<id name="playGroupId" type="java.lang.Integer">
 			<column name="play_group_id" />
 			<generator class="identity" />
@@ -13,7 +14,9 @@
 			<column name="play_group_name" length="64" />
 		</property>
 		<property name="playGroupEnabled" type="java.lang.Short">
-			<column name="play_group_enabled" />
+			<column name="play_group_enabled">
+				<comment>玩法组是否启用</comment>
+			</column>
 		</property>
 		<set name="plays" table="t_play" inverse="true" cascade="all,delete-orphan"
 			sort="natural">

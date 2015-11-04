@@ -3,19 +3,29 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
 <hibernate-mapping>
-    <class name="hql.common.beans.TtfDefaultOdds" table="t_ttf_default_odds" catalog="sevencolor">
-        <id name="ttfDefaultOddsId" type="java.lang.Integer">
-            <column name="ttf_default_odds_id" />
-            <generator class="identity" />
-        </id>
-        <property name="playId" type="java.lang.Integer">
-            <column name="play_id" />
-        </property>
-        <property name="playName" type="string">
-            <column name="play_name" length="20" />
-        </property>
-        <property name="defaultOdds" type="big_decimal">
-            <column name="default_odds" precision="6" scale="3" />
-        </property>
-    </class>
+	<class name="hql.common.beans.TtfDefaultOdds" table="t_ttf_default_odds"
+		catalog="sevencolor">
+		<comment>二三四字现默认赔率表</comment>
+		<id name="ttfDefaultOddsId" type="java.lang.Integer">
+			<column name="ttf_default_odds_id">
+				<comment></comment>
+			</column>
+			<generator class="identity" />
+		</id>
+		<property name="playId" type="java.lang.Integer">
+			<column name="play_id">
+				<comment>玩法ID</comment>
+			</column>
+		</property>
+		<property name="playName" type="string">
+			<column name="play_name" length="20">
+				<comment>玩法名称</comment>
+			</column>
+		</property>
+		<property name="defaultOdds" type="big_decimal">
+			<column name="default_odds" precision="6" scale="3">
+				<comment>默认赔率</comment>
+			</column>
+		</property>
+	</class>
 </hibernate-mapping>
