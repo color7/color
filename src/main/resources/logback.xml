@@ -60,7 +60,8 @@
            <!--连接池 -->
            <dataSource class="com.mchange.v2.c3p0.ComboPooledDataSource">
               <driverClass>com.mysql.jdbc.Driver</driverClass>
-              <url>jdbc:mysql://qinxin123.wicp.net:15131/sevencolor</url>
+              <!-- <url>jdbc:mysql://qinxin123.wicp.net:15131/sevencolor</url> -->
+              <url>jdbc:mysql://127.0.0.1/sevencolor</url>
               <user>root</user>
               <password>tiger</password>
             </dataSource>

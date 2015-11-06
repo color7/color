@@ -11,6 +11,6 @@
     <!-- 引入属性文件 -->
 	<context:property-placeholder location="classpath:config.properties" />
 	
-	<context:component-scan base-package="hql.**.dao"/>
+	<context:component-scan base-package="hql.*"/>
 	
 </beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="hql.color.common.beans.LogDetail" table="t_log_detail"
+		catalog="sevencolor">
+		<comment>日志明细表</comment>
+		<id name="logDetailId" type="java.lang.Integer">
+			<column name="log_detail_id" />
+			<generator class="identity" />
+		</id>
+		<many-to-one name="log" class="hql.color.common.beans.Log"
+			insert="false" update="false" index="log_detail_log_id_idx"
+			foreign-key="null">
+			<column name="log_id" />
+		</many-to-one>
+		<property name="logDetail" type="string">
+			<column name="log_detail" length="1000">
+				<comment>操作内容</comment>
+			</column>
+		</property>
+		<property name="detailType" type="java.lang.Short">
+			<column name="detail_type">
+				<comment>明细类型</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

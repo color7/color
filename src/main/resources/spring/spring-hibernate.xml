@@ -81,7 +81,7 @@ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
 		<!-- 自动扫描hbm方式配置的hibernate文件和.hbm文件 -->
 		<property name="mappingLocations">
 			<list> 
-				<value>classpath*:/hql/dao/hibernate/*.hbm.xml</value> 
+				<value>classpath*:/hql/color/dao/hibernate/*.hbm.xml</value> 
 			</list> 
 		</property>
 	</bean>

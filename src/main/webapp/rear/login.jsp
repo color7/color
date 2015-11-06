@@ -1,11 +1,15 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>登录页面</title>
-<link rel="stylesheet" href="Css/home.css" type="text/css" media="screen" charset="utf-8">
-<link rel="stylesheet" href="Css/sign.min.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="css/home.css" type="text/css" media="screen" charset="utf-8">
+<link rel="stylesheet" href="css/sign.min.css" type="text/css" media="screen" charset="utf-8">
 </head>
 
 <body style="background-color:#fff;">
@@ -22,18 +26,18 @@
                     </div>
                     <h1>登录暴走团</h1>
                 </div>
-                <form id="login-user-form" method="post" action="index.html">
+                <form id="login-user-form" method="post" action="<%=path %>/loginAdmin">
                     <input type="hidden" name="redirect" value="" id="redirect"/>
                     <div class="textbox_ui user">
-                                    <input type="text" name="email" placeholder="用户名/邮箱/手机号" required="" autofocus=""/>
+                                    <input type="text" name="userAccount" placeholder="用户名/邮箱/手机号" required="" autofocus=""/>
                                     <div class="invalid">
                             <i></i>
-                            <div class="required">请输入用户名/邮箱/手机号</div>
+                            <div class="required">请输入账号</div>
                             <div class="custom"></div>
                         </div>
                     </div>
                     <div class="textbox_ui pass">
-                                    <input type="password" name="password" placeholder="密码" required=""/>
+                                    <input type="password" name="userPassword" placeholder="密码" required=""/>
                                     <div class="invalid">
                             <i></i>
                             <div class="required">请输入密码</div>
