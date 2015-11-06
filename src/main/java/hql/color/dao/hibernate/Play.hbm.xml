@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="hql.color.common.beans.Play" table="t_play" catalog="sevencolor">
+		<comment>玩法表</comment>
+		<id name="playId" type="java.lang.Integer">
+			<column name="play_id" />
+			<generator class="identity" />
+		</id>
+		<many-to-one name="playGroup" class="hql.color.common.beans.PlayGroup"
+			insert="false" update="false" index="play_play_group_id_idx"
+			foreign-key="null">
+			<column name="play_group_id" />
+		</many-to-one>
+		<property name="palyName" type="string">
+			<column name="paly_name" length="20" />
+		</property>
+		<property name="palyEnabled" type="java.lang.Short">
+			<column name="paly_enabled">
+				<comment>玩法是否启用</comment>
+			</column>
+		</property>
+		<property name="oddsMax" type="big_decimal">
+			<column name="odds_max" precision="6" scale="3">
+				<comment>赔率上限</comment>
+			</column>
+		</property>
+		<property name="palyMin" type="java.lang.Integer">
+			<column name="paly_min">
+				<comment>最小下注</comment>
+			</column>
+		</property>
+		<property name="singleMax" type="java.lang.Integer">
+			<column name="single_max">
+				<comment>单注上限</comment>
+			</column>
+		</property>
+		<property name="singleItemMax" type="java.lang.Integer">
+			<column name="single_item_max">
+				<comment>单项上限</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

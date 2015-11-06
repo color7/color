@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="hql.color.common.beans.MsgPush" table="t_msg_push"
+		catalog="sevencolor">
+		<comment>消息推送表</comment>
+		<id name="msgPushId" type="java.lang.Integer">
+			<column name="msg_push_id" />
+			<generator class="identity" />
+		</id>
+		<property name="pushContent" type="java.lang.Integer">
+			<column name="push_content" />
+		</property>
+	</class>
+</hibernate-mapping>

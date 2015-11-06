@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="hql.color.common.beans.RoleRes" table="t_role_res" catalog="sevencolor">
+        <id name="roleResId" type="java.lang.Integer">
+            <column name="role_res_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="role" class="hql.color.common.beans.Role"
+			insert="false" update="false" index="role_res_role_id_idx" foreign-key="null">
+			<column name="role_id" />
+		</many-to-one>
+		<many-to-one name="res" class="hql.color.common.beans.Res"
+			insert="false" update="false" index="role_res_res_id_idx" foreign-key="null">
+			<column name="res_id" />
+		</many-to-one>
+    </class>
+</hibernate-mapping>

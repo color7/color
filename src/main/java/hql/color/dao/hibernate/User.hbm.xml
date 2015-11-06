@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-2 0:52:27 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+	<class name="hql.color.common.beans.User" table="t_user" catalog="sevencolor">
+		<id name="userId" type="java.lang.Integer">
+			<column name="user_id">
+				<comment>用户ID</comment>
+			</column>
+			<generator class="identity" />
+		</id>
+		<property name="uid" type="java.lang.Integer">
+			<column name="uid">
+				<comment>uid</comment>
+			</column>
+		</property>
+		<property name="codeName" type="string">
+			<column name="code_name" length="128">
+				<comment>代号</comment>
+			</column>
+		</property>
+		<property name="userAccount" type="string">
+			<column name="user_account" length="20">
+				<comment>帐号</comment>
+			</column>
+		</property>
+		<property name="accountType" type="java.lang.Short">
+			<column name="account_type">
+				<comment>账号类型</comment>
+			</column>
+		</property>
+		<property name="userPassword" type="string">
+			<column name="user_password" length="60">
+				<comment>密码</comment>
+			</column>
+		</property>
+		<property name="createTime" type="timestamp">
+			<column name="create_time" length="19">
+				<comment>创建时间</comment>
+			</column>
+		</property>
+		<property name="userStatus" type="java.lang.Short">
+			<column name="user_status">
+				<comment>状态</comment>
+			</column>
+		</property>
+		<property name="userMobile" type="string">
+			<column name="user_mobile" length="32">
+				<comment>手机</comment>
+			</column>
+		</property>
+		<property name="isFirstLogin" type="java.lang.Short">
+			<column name="is_first_login">
+				<comment>是否第一次登录</comment>
+			</column>
+		</property>
+		<property name="percentMax" type="big_decimal">
+			<column name="percent_max" precision="6" scale="3">
+				<comment>占成上限(拦货上限)</comment>
+			</column>
+		</property>
+		<property name="parentUserId" type="java.lang.Integer">
+			<column name="parent_user_id">
+				<comment>上级ID</comment>
+			</column>
+		</property>
+		<property name="userLevel" type="string">
+			<column name="user_level">
+				<comment>层次</comment>
+			</column>
+		</property>
+	</class>
+</hibernate-mapping>

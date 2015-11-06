@@ -7,6 +7,15 @@
  */
 package com.test;
 
+import hql.color.common.beans.User;
+
+import org.hibernate.SessionFactory;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
 /**
  * @ClassName: hello
  * @Description: (这里用一句话描述这个类的作用)
@@ -22,9 +31,20 @@ package com.test;
 
  --------------------------------------------------------------------------------------
  */
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "classpath*:spring/spring-hibernate.xml")
 public class hello {
-	private String ll;
-	private String uu;
-	private String tt;
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	@Test
+	public void saveTest(){
+//		Criteria crit = SessionUtil.openSession().createCriteria(User.class);
+//		List<User> user = crit.add(Restrictions.eq("userAccount", "lin")).list();
+		String hql = "from User where userAccount = ? ";
+		User user = (User) sessionFactory.openSession().createQuery(hql).setParameter(0, "lin");
+		System.out.println(user);
+	}
 
 }

@@ -544,7 +544,7 @@ div.line.verityWrap {
 	width: 190px;
 	height: 70px;
 	margin: 0 0 40px 8px;
-	background: url(../Images/logo2.png) no-repeat 0 0
+	background: url(../images/logo2.png) no-repeat 0 0
 }
 
 .rename .logo {
@@ -552,7 +552,7 @@ div.line.verityWrap {
 }
 
 .loginPic {
-	background: url(../Images/loginPic.jpg)
+	background: url(../images/loginPic.jpg)
 		no-repeat;
 	position: relative;
 	width: 960px;
